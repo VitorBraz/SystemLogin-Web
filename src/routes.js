@@ -7,7 +7,6 @@ function RoutesApp() {
         <BrowserRouter>
             <Routes>
                 <Route path="/dashboard"  element={<Dashboard />} />
-               
                 <Route path="*" element={<Erro />} />
             </Routes>
         </BrowserRouter>

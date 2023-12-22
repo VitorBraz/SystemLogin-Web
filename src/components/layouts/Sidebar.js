@@ -64,13 +64,27 @@ const Sidebar = () => {
     };
 
     function decrypted(decryptData) {
-
-        const cookie = document.cookie.split('; ').find((row) => row.startsWith(`${decryptData}=`));
-        const cookieValue = cookie.split('=')[1];
-
-        const decodedCookieValue = decodeURIComponent(cookieValue);
-        const decrypted = AES.decrypt(decodedCookieValue, ENCRYPTION_KEY).toString(enc.Utf8);
-        return decrypted;
+        const cookies = document.cookie;
+    
+        // Verifica se os cookies existem
+        if (cookies) {
+            const cookie = cookies.split('; ').find((row) => row.startsWith(`${decryptData}=`));
+    
+            // Verifica se o cookie foi encontrado
+            if (cookie) {
+                const cookieValue = cookie.split('=')[1];
+                const decodedCookieValue = decodeURIComponent(cookieValue);
+    
+                // Verifica se o valor do cookie está presente
+                if (decodedCookieValue) {
+                    const decryptedValue = AES.decrypt(decodedCookieValue, ENCRYPTION_KEY).toString(enc.Utf8);
+                    return decryptedValue;
+                }
+            }
+        }
+    
+        // Se algo der errado, retorna uma string vazia ou outro valor padrão
+        return '';
     }
 
     const getFileExtension = (filename) => {
