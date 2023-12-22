@@ -21,3 +21,15 @@ Meu sistema de login React é uma solução eficiente e responsiva para agilizar
   <p><strong>Observação:</strong> A imagem sofreu redução de qualidade devido à conversão de vídeo para GIF. 😉</p>
   <img src="frontend.gif" alt="Frontend GIF">
 </div>
+
+---
+
+### Configuração do Backend e Frontend
+
+Para fins de segurança e preservação de identificadores de cookies, a configuração entre o backend e frontend é feita através do arquivo `.env`. É necessário configurar apenas a chave de sua escolha:
+
+```env
+REACT_APP_COOKIE_ID_UUID=[SEU IDENTIFICADOR COOKIE AQUI]
+REACT_APP_COOKIE_ID_NAME=[SEU IDENTIFICADOR COOKIE AQUI]
+REACT_APP_COOKIE_ID_NUMB=[SEU IDENTIFICADOR COOKIE AQUI]
+REACT_APP_ENCRYPTION_KEY=[SEU IDENTIFICADOR COOKIE AQUI]
