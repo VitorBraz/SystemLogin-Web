@@ -1,0 +1,91 @@
+/* Estilos para o Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: hsla(0, 0%, 100%, 0.8);
+  height: 100vh;
+  transition: width 0.3s ease;
+  box-sizing: border-box;
+  margin-left: 5px;
+  padding: 20px;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.expanded {
+  width: 220px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  color: #333;
+  padding: 5px 0;
+}
+
+.centered-button {
+  margin: 0 auto;
+  display: block;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar a:visited {
+  color: inherit;
+}
+
+.sidebar ul li {
+  border-radius: 10px 0 0 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 10px;
+  transition: all 0.3s;
+  border-radius: 0 10px 10px 0;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+
+.sidebar ul li a:hover {
+  background-color: #77d2ff;
+  color: #fff;
+}
+
+.sidebar ul li.active {
+  background-color: #77d2ff;
+  color: #fff;
+}
+
+.avatar-section img:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 255, 0.2);
+  cursor: pointer;
+}
+
+/* Estilos responsivos para telas pequenas */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Adicione esta linha para ocultar completamente o sidebar em telas pequenas */
+    width: 80px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+  }
+
+  /* Restante do seu código permanece o mesmo */
+}

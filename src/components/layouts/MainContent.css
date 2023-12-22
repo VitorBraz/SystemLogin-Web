@@ -1,0 +1,16 @@
+/* Estilos para a área central de conteúdo */
+.MainContent {
+    padding: 50px;
+    margin: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px; /* Valor ajustável para a curvatura das bordas */
+    min-height: 85%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra: deslocamento em x, deslocamento em y, desfoque, cor */
+}
+
+.PageName {
+    padding: 22px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra: deslocamento em x, deslocamento em y, desfoque, cor */
+}

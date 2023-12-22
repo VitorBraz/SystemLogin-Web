@@ -1,0 +1,12 @@
+/* Estilos para o menu superior */
+.TopMenu {
+    background: linear-gradient(to right, #ffb74c, #ff8400);
+    color: white;
+    padding: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra leve na parte inferior */
+}
+
+.TopMenu a {
+    text-decoration: none;
+    color: white;
+}

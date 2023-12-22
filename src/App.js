@@ -1,0 +1,65 @@
+import React, { useState, useEffect } from 'react';
+import Sidebar from './components/layouts/Sidebar';
+import TopMenu from './components/layouts/TopMenu';
+import MainContent from './components/layouts/MainContent';
+import RoutesApp from './routes';
+import { CircularProgress } from '@mui/material';
+
+function App() {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    
+    const checkAuthentication = async () => {
+      const isAuthenticated = () => {
+        const cookieName = process.env.REACT_APP_COOKIE_ID_UUID; // Usando a variável de ambiente para o nome do cookie
+        const cookies = document.cookie;
+        console.log(cookieName)
+        return cookies.includes(cookieName);
+      };
+
+      // Simulando um delay de verificação assíncrona (para exemplo)
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      if (!isAuthenticated()) {
+        // Redirecionamento assíncrono para a URL fornecida
+        window.location.href = 'http://localhost:3000';
+        return;
+      } else {
+        setAuthenticated(true);
+
+      }
+      setLoading(false);
+    };
+
+    checkAuthentication();
+  }, []);
+
+  if (loading) {
+    // Exibe o indicador de carregamento do Material-UI
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+  <CircularProgress style={{ color: 'white' }} />
+</div>
+
+    
+    );
+  }
+
+  return (
+    <div style={{ display: 'flex' }}>
+      <Sidebar />
+      <div className='flexContent' style={{ flex: 1 }}>
+        <TopMenu />
+        {authenticated && (
+          <MainContent>
+            <RoutesApp />
+          </MainContent>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default App;
