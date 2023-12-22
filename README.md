@@ -16,3 +16,8 @@ Meu sistema de login React é uma solução eficiente e responsiva para agilizar
 - **Fácil Integração:** Projetado para facilitar a integração em diversos ambientes de desenvolvimento.
 
 ---
+
+<div align="center">
+  <p><strong>Observação:</strong> A imagem sofreu redução de qualidade devido à conversão de vídeo para GIF. 😉</p>
+  <img src="frontend.gif" alt="Frontend GIF">
+</div>
